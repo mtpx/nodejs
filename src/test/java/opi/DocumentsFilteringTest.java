@@ -5,6 +5,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import io.qameta.allure.selenide.AllureSelenide;
+
 import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;

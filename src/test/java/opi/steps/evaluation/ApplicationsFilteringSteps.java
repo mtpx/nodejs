@@ -8,6 +8,7 @@ import cucumber.api.java.en.When;
 import opi.pages.evaluation.BasePage;
 import opi.pages.evaluation.EvaluationPage;
 import opi.pages.programs.LoginPage;
+import opi.utils.Log;
 import opi.utils.PropertiesReader;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
@@ -31,6 +32,7 @@ public class ApplicationsFilteringSteps {
     public void userEmployeeIsOnApplicationsList() throws IOException, InterruptedException {
         objPropertiesReader.getProperties();
         Selenide.open(objPropertiesReader.getUrlEvaluation());
+        Log.info(objPropertiesReader.getUrlEvaluation());
         objLoginPage.login(objPropertiesReader.getEmployee(), objPropertiesReader.getPassword());
         objEvaluationPage.selectAllPrograms();
     }
@@ -38,6 +40,7 @@ public class ApplicationsFilteringSteps {
     @When("^UserEmployee filter random application by signature$")
     public void useremployeeFilterRandomApplicationBySignature() {
         signature = objEvaluationPage.getFirstSignature();
+        Log.info(objEvaluationPage.getFirstSignature());
         objEvaluationPage.setSignature(signature);
     }
 
